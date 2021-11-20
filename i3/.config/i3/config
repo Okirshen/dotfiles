@@ -13,6 +13,9 @@ floating_modifier $mod
 # wallpaper
 exec_always feh --bg-fill ~/Pictures/wallpaper.png
 
+# change keyboard layout
+exec_always setxkbmap -layout es,il -option grp:alt_shift_toggle
+
 #  _  _________   ______ ___ _   _ ____  ____  
 # | |/ / ____\ \ / / __ )_ _| \ | |  _ \/ ___| 
 # | ' /|  _|  \ V /|  _ \| ||  \| | | | \___ \ 
