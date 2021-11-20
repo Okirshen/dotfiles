@@ -5,7 +5,7 @@
 # |___|____/       \____/_/   \_\_|   |____/
 
 # gaps
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 5
 
 gaps inner 20
 gaps outer 30
