@@ -5,7 +5,7 @@
 # |___|____/       \____/_/   \_\_|   |____/
 
 # gaps
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 3
 
 gaps inner 20
 gaps outer 30
@@ -29,10 +29,13 @@ bindsym Print exec flameshot gui
 exec_always feh --bg-fill ~/Pictures/wallpaper.png
 
 # change keyboard layout
-exec_always setxkbmap -layout us,il -option grp:alt_shift_toggle
+exec_always setxkbmap -layout us,il -option grp:win_space_toggle
 
 # polybar
 exec_always --no-startup-id ~/.config/i3/polybar.sh
+
+# sound visualizer
+# exec_always --no-startup-id ~/.config/i3/glava.sh
 
 # physical volume input
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 1 +5% #increase sound volume
@@ -40,7 +43,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 1 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # picom
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 #  _  _________   ______ ___ _   _ ____  ____
 # | |/ / ____\ \ / / __ )_ _| \ | |  _ \/ ___|

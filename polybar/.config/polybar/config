@@ -23,13 +23,14 @@ background-alt = #44475a
 ;foreground = ${xrdb:color7:#222}
 foreground = #f8f8f2
 foreground-alt = #8be9fd
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = #8be9fd
+secondary = #bd93f9
+alert = #ff5555
 
 [bar/bar]
+wm-restack = bspwm
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 98%
+width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
@@ -46,20 +47,20 @@ line-color = #f00
 border-size = 4
 border-color = #00000000
 
-; padding-left = 0
-; padding-right = 2
+padding-left = 1
+padding-right = 1
 
-; module-margin-left = 1
-; module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = FiraCode Nerd Font:pixelsize=10;1
 
-modules-left = filesystem memory cpu date
-modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = xkeyboard pulseaudio
+modules-left = filesystem memory cpu bspwm xwindow
+modules-right = date xkeyboard pulseaudio
 
-tray-position = right
+tray-position = none
 tray-padding = 2
+tray-offset-x = 15%
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
