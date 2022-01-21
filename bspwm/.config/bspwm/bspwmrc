@@ -5,6 +5,7 @@ feh --bg-fill ~/Pictures/wallpaper.png &
 picom &
 ~/.config/polybar/polybar.sh &
 setxkbmap -layout us,il -option grp:win_space_toggle &
+dunst &
 
 # bspc monitor -d I II III IV V VI VII VIII IX X
 
