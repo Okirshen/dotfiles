@@ -3,8 +3,14 @@ set mouse=a
 set tabstop=2
 set shiftwidth=2
 
+set ma
+set clipboard=unnamed
 
 colorscheme dracula
+
+hi Normal guibg=NONE ctermbg=NONE
+
+lua require'lspconfig'.rust_analyzer.setup{}
 
 " nerd tree
 autocmd VimEnter * NERDTree | wincmd p
