@@ -14,7 +14,7 @@
     yellow: 	rgba ( 241, 250, 140, 100 % );
 }
 * {
-    selected-normal-background:     @cyan;
+    selected-normal-background:     @pink;
     normal-background:              @background;
     normal-foreground:              @foreground;
     alternate-normal-background:    @normal-background;
@@ -35,7 +35,7 @@
     background-color: @normal-background;
 }
 #window {
-    border:           3;
+    border:           1;
     padding:          9;
 }
 #mainbox {
