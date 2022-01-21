@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# discord
+super + d
+	discord
+
 # terminal emulator
 super + Return
 	kitty
@@ -28,9 +32,9 @@ super + b
 
 # volume control
 XF86AudioRaiseVolume
-	pactl -- set-sink-volume 1 +5%
+	pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume
-	pactl -- set-sink-volume 1 -5%
+	pactl -- set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
