@@ -1,0 +1,34 @@
+set hidden true
+set icons true
+set drawbox true
+set previewer pistol
+set shell sh
+
+
+cmd mkdir ${{
+	set -f
+	printf "Directory Name: "
+	read ans
+	mkdir $ans
+}
+
+cmd hide %{{
+ printf($hidden)
+}}
+
+cmd touch ${{
+	set -f
+	printf "file Name: "
+	read ans
+	touch $ans
+}}}
+
+map e
+map v
+map dd
+
+map <enter> shell
+map r rename
+map dd delete
+map ee &&EDITOR "$f"
+map ve &&VISUAL "%f"
