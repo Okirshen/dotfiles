@@ -18,9 +18,13 @@ Plug 'mhinz/vim-startify'
 Plug 'terrortylor/nvim-comment'
 Plug 'jiangmiao/auto-pairs'
 Plug('dracula/vim', {['as'] = 'dracula'})
+Plug 'Yggdroot/indentLine'
+Plug('iamcco/markdown-preview.nvim', { ['do'] = 'cd app && yarn install'  })
+Plug 'tpope/vim-fugitive'
 
 vim.call 'plug#end'
 
+require 'plugins.rust'
 require 'plugins.treesitter'
 require 'plugins.cmp'
 require'rust-tools'.setup{}

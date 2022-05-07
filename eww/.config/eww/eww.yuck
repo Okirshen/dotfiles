@@ -1,0 +1,76 @@
+
+(defwidget bar []
+  (centerbox :orientation "h"
+    (workspaces)
+    (music)
+    (sidestuff)))
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (metric :label "🔊"
+            :value volume
+            :onchange "amixer -D pulse sset Master {}%")
+    (metric :label ""
+            :value {EWW_RAM.used_mem_perc}
+            :onchange "")
+    (metric :label "💾"
+            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+            :onchange "")
+    time))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (button :onclick "systemctl poweroff" "")
+    (button :onclick "systemctl reboot" "")
+    (button :onclick "bspc quit" "")))
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "🎵${music}" : ""}
+    (button :onclick "playerctl pervious" " ⏮️ ")
+    (button :onclick "playerctl play-pause" "⏯️")
+    (button :onclick "playerctl next" " ⏭️")
+	))
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))
+
+
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll volume :interval "50ms"
+  "scripts/getvol")
+
+(defpoll time :interval "10s"
+  "date '+%H:%M %d/%m/%y'")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :wm-ignore false
+  :stacking "fg"
+  :geometry (geometry :x "0%"
+                      :y "1%"
+                      :width "98%"
+                      :height "7px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar))

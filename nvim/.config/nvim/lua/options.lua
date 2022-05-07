@@ -1,15 +1,15 @@
 vim.o.number = true
 vim.o.clipboard = 'unnamed'
 vim.o.tabstop = 4
-vim.o.ma = true
-
+vim.o.mouse = 'a'
+vim.o.expandtab = true
 
 vim.g.airline_theme='dracula'
--- vim.colorscheme = 'dracula'
+vim.colorscheme = 'dracula'
 
 vim.g.startify_custom_header = {
-	'     ____    _    __  __ _____ _ __     _____ __  __  ',
-	'    / ___|  / \\  |  \\/  | ____| |\\ \\   / /_ _|  \\/  | ',
+'     ____    _    __  __ _____ _ __     _____ __  __  ',
+'   / ___|  / \\  |  \\/  | ____| |\\ \\   / /_ _|  \\/  | ',
 '   | |     / _ \\ | |\\/| |  _| | | \\ \\ / / | || |\\/| | ',
 '   | |___ / ___ \\| |  | | |___| |__\\ V /  | || |  | | ',
 '    \\____/_/   \\_\\_|  |_|_____|_____\\_/  |___|_|  |_| ',

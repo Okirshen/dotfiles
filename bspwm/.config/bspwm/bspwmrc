@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 feh --bg-fill ~/Pictures/wallpaper.png &
 picom &
-~/.config/polybar/polybar.sh &
+eww open bar &
 setxkbmap -layout us,il -option grp:win_space_toggle &
 dunst &
 

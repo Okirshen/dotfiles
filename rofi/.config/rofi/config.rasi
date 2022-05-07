@@ -1,3 +1,15 @@
+configuration {
+		display-drun: "Applications:";
+		display-window: "Windows:";
+		drun-display-format: "{name}";
+		font: "FiraCode Nerd Font";
+		modi: "window,drun";
+		show-icons: true;
+		icon-theme: "dracula";
+}
+
+@theme "/dev/null"
+
 // Dracula colors
 * {
     background: 	rgba ( 40, 42, 54, 100 % );
@@ -15,10 +27,11 @@
 }
 * {
     selected-normal-background:     @pink;
+	/* background-color: @background; */
     normal-background:              @background;
     normal-foreground:              @foreground;
-    alternate-normal-background:    @normal-background;
-    alternate-normal-foreground:    @foreground;
+    /* alternate-normal-background:    @normal-background; */
+    /* alternate-normal-foreground:    @foreground; */
     selected-normal-foreground:     @normal-background;
     urgent-foreground:              @red;
     urgent-background:              @normal-background;
@@ -28,14 +41,16 @@
     selected-urgent-background:     @normal-background;
     alternate-active-background:    @normal-background;
     alternate-active-foreground:    @selected-active-foreground;
+
     alternate-active-background:    @selected-active-background;
     border-color:                   @selected-normal-background;
     separatorcolor:                 @border-color;
     spacing: 2;
     background-color: @normal-background;
+	color: @normal-foreground;
 }
 #window {
-    border:           1;
+    border:           0;
     padding:          9;
 }
 #mainbox {
