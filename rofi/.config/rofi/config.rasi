@@ -2,7 +2,7 @@ configuration {
 		display-drun: "Applications:";
 		display-window: "Windows:";
 		drun-display-format: "{name}";
-		font: "FiraCode Nerd Font";
+		font: "Roboto 14";
 		modi: "window,drun";
 		show-icons: true;
 		icon-theme: "dracula";

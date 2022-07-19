@@ -1,27 +1,55 @@
 set hidden true
 set icons true
-set drawbox true
-set previewer pistol
+set drawbox
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
 set shell sh
 
-
 cmd mkdir ${{
-	set -f
-	printf "Directory Name: "
-	read ans
-	mkdir $ans
-}
-
-cmd hide %{{
- printf($hidden)
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
 }}
 
 cmd touch ${{
-	set -f
-	printf "file Name: "
-	read ans
-	touch $ans
-}}}
+  printf "file Name: "
+  read ans
+  touch $ans
+}}
+
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+}} 
+
+cmd fzf_search ${{
+    res="$( \
+        RG_PREFIX="rg --column --line-number --no-heading --color=always \
+            --smart-case "
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1
+    )"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
+
+cmd z %{{
+    result="$(zoxide query --exclude "${PWD}" -- "$1")"
+    lf -remote "send ${id} cd '${result}'"
+}}
+
+cmd zi ${{
+    result="$(zoxide query -i -- "$1")"
+    lf -remote "send ${id} cd '${result}'"
+}}
+
+map gs :fzf_search
 
 map e
 map v
