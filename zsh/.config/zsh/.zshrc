@@ -27,6 +27,11 @@ bindkey -s '^o' 'lfcd\n'
 
 alias v="nvim"
 alias yay="paru"
-alias la="ls -A"
-alias ls="ls --color=auto"
+alias la="lsd -A"
+alias ls="lsd"
+alias cd="z"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

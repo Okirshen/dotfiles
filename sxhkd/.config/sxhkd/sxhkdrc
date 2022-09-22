@@ -118,8 +118,14 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {1-3}
-	bspc node -d '^{1-3}'
+super + alt + {0-9}
+	bspc node -d {0-9}
+	
+super + shift + {0-9}
+	bspc node -d {0-9} -f
+
+super + {0-9}
+	bspc desktop -f {0-9}
 
 #
 # preselect
@@ -133,7 +139,7 @@ super + ctrl + {h,j,k,l}
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+1 cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
 

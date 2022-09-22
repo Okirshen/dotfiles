@@ -28,18 +28,24 @@ configuration {
 * {
     selected-normal-background:     @pink;
 	/* background-color: @background; */
+    active-background:              @background;
     normal-background:              @background;
     normal-foreground:              @foreground;
     /* alternate-normal-background:    @normal-background; */
     /* alternate-normal-foreground:    @foreground; */
     selected-normal-foreground:     @normal-background;
+    selected-urgent-foreground:     @normal-background;
     urgent-foreground:              @red;
+    active-foreground:              @foreground;
     urgent-background:              @normal-background;
     alternate-urgent-background:    @urgent-background;
     alternate-urgent-foreground:    @urgent-foreground;
+    alternate-normal-foreground:    @foreground;
     selected-active-foreground:     @foreground;
     selected-urgent-background:     @normal-background;
+    selected-active-background:     @normal-background;
     alternate-active-background:    @normal-background;
+    alternate-normal-background:    @normal-background;
     alternate-active-foreground:    @selected-active-foreground;
 
     alternate-active-background:    @selected-active-background;
